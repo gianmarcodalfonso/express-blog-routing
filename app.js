@@ -7,6 +7,9 @@ const app = express();
 // Definiamo la porta d'ascolto del server
 const port = 3000;
 
+// Middleware per i file statici
+app.use(express.static(`public`));
+
 // importo il file router per i post
 const postsRouter = require(`./routers/posts.js`)
 
