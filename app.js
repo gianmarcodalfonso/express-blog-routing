@@ -7,10 +7,15 @@ const app = express();
 // Definiamo la porta d'ascolto del server
 const port = 3000;
 
+// importo il file router per i post
+const postsRouter = require(`./routers/posts.js`)
+
 // Rotta base della nostra applicazione
 app.get(`/`, (req, res) => {
   res.send(`Server del mio blog!`)
 })
+
+app.use(`/posts`,postsRouter)
 
 // Porta d'ascolto del server
 app.listen(port, () => {
