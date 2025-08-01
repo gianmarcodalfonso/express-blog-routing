@@ -15,7 +15,7 @@ app.get(`/`, (req, res) => {
   res.send(`Server del mio blog!`)
 })
 
-app.use(`/posts`,postsRouter)
+app.use(`/posts`,postsRouter);
 
 // Porta d'ascolto del server
 app.listen(port, () => {

@@ -5,7 +5,7 @@ const router = express.Router()
 
 // definizione rotte per i post
 // index
-application.get(`/`, (req, res) => {
+router.get(`/`, (req, res) => {
   const posts = [
   {
     id: 1,
@@ -50,8 +50,8 @@ application.get(`/`, (req, res) => {
     image: "/imgs/posts/torta_paesana.jpeg",
     tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
   },
+  ];
   res.json(posts)
-];
 })
 
 // show
@@ -81,4 +81,4 @@ router.delete(`/:id`, (req,res) => {
 })
 
 //esporto il router
-module.exports = posts;
+module.exports = router;
