@@ -3,8 +3,10 @@ const express = require(`express`)
 // definisco l'oggetto router
 const router = express.Router()
 
-
-const posts = [
+// definizione rotte per i post
+// index
+application.get(`/`, (req, res) => {
+  const posts = [
   {
     id: 1,
     title: "Ciambellone",
@@ -48,6 +50,34 @@ const posts = [
     image: "/imgs/posts/torta_paesana.jpeg",
     tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
   },
+  res.json(posts)
 ];
+})
+
+// show
+router.get(`/:id`, (req,res) => {
+  res.send(`Dettaglio del post con id: ${req.params.id}`)
+})
+
+// create
+router.post(`/`, (req,res) => {
+  res.send(`creazione di un nuovo post`)
+})
+
+// update
+router.put(`/:id`, (req,res) => {
+  res.send(`Modifica totale del post con id: ${req.params.id}`)
+})
+
+// patch
+router.patch(`/:id`, (req,res) => {
+  res.send(`Modifica parziale del post con id: ${req.params.id}`)
+})
+
+
+// delete
+router.delete(`/:id`, (req,res) => {
+  res.send(`cancellazione del post con id: ${req.params.id}`)
+})
 
 module.exports = posts;
